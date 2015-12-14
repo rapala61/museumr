@@ -1,0 +1,7 @@
+<%= form_for @painting do |f| %>
+  <p> Title <%= f.text_field :title %> </p>
+  <p> Image URL <%= f.text_field :img_url %> </p>
+  <p> Year <%= f.text_field :year_made %> </p>
+  <p> Artist <%= f.collection_select :artist_id, Artist.all, :id, :name %> </p>
+  <%= f.submit %>
+<% end%>

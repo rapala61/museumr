@@ -1,0 +1,15 @@
+<h1> Paintings </h1>
+<%= link_to "New Painting", new_painting_path %>
+
+<div class="paintings">
+  <% @paintings.each do |painting| %>
+
+    <div class="painting">
+      <h3> <%= painting.title %> </h3>
+      <h4> By: <%= painting.artist.name %> </h4>
+      <img src="<%=painting.img_url%>">
+      <h5> <%= painting.year_made %> </h5>
+      <%= link_to "Delete Painting", painting_path(painting), method: :delete %>
+    </div>
+  <% end %>
+</div>

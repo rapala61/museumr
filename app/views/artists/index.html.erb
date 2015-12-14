@@ -1,0 +1,29 @@
+<h1> Artists </h1>
+<%= link_to "New Artist", new_artist_path %>
+<div class="artists">
+  <% @artists.each do |artist| %>
+
+
+  <div class="artist">
+    <h3> <%= artist.name %> </h3>
+    <!-- <img src="<%=artist.img_url%>"> -->
+    <h5> <%= artist.birth_year %> </h5>
+    <h5> <%= artist.nationality %> </h5>
+    <p> <%= artist.description %> </p>
+    <h3> Paintings of <%= artist.name%> </h3>
+    <% artist.paintings.each do |painting| %>
+      <h3><%= painting.title %></h3>
+      <h3><%= painting.year_made %></h3>
+      <img src="<%=painting.img_url%>">
+    <% end %>
+    <br>
+    <span>
+      <%= link_to "Edit Artist", edit_artist_path(artist) %>
+      <%= link_to "Delete Artist", artist_path(artist), method: :delete %>
+    </span>
+
+  </div>
+
+  <% end %>
+</div>
+<br/>
