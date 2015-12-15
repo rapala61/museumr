@@ -27,3 +27,7 @@
  .artist {
    display: inline-block;
  }
+
+ .artist img {
+   height: 125px;
+ }
