@@ -12,9 +12,11 @@
     <p> <%= artist.description %> </p>
     <h3> Paintings of <%= artist.name%> </h3>
     <% artist.paintings.each do |painting| %>
-      <h3><%= painting.title %></h3>
-      <h3><%= painting.year_made %></h3>
-      <img src="<%=painting.img_url%>">
+      <div class="painting">
+        <h3><%= painting.title %></h3>
+        <h3><%= painting.year_made %></h3>
+        <img src="<%=painting.img_url%>">
+      </div>
     <% end %>
     <br>
     <span>
